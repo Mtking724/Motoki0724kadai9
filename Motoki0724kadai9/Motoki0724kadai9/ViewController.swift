@@ -8,8 +8,8 @@
 import UIKit
 
 
-class ViewController: UIViewController, secondVCDelegate  {
-    func getPrefecturesName(name: String) {
+class ViewController: UIViewController, SecondViewControllerDelegate  {
+    func didSelectPrefecture(name: String) {
         prefecturesLabel.text = name
         dismiss(animated: true, completion: nil)
     }
@@ -24,11 +24,10 @@ class ViewController: UIViewController, secondVCDelegate  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSecond" {
             if let nav = segue.destination as? UINavigationController {
-                let value = nav.viewControllers.first as? SecondViewController
-                value?.prefectures = self
+                let secondViewController = nav.topViewController as? SecondViewController
+                secondViewController?.delegate = self
+
             }
         }
     }
 }
-
-

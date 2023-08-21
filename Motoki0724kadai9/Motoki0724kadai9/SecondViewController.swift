@@ -9,22 +9,22 @@ import UIKit
 
 class SecondViewController: UIViewController {
     //プロトコルに準拠させた変数を生成
-    var prefectures: secondVCDelegate? = nil
+    var delegate: SecondViewControllerDelegate?
     
     //ボタンを押して遷移元にデータを渡す
     @IBAction func tokyoButton(_ sender: Any) {
-        prefectures?.getPrefecturesName(name: "東京都")
+        delegate?.didSelectPrefecture(name: "東京都")
     }
     
     @IBAction func kanagawaButton(_ sender: Any) {
-        prefectures?.getPrefecturesName(name: "神奈川県")
+        delegate?.didSelectPrefecture(name: "神奈川県")
     }
     
     @IBAction func saitamaButton(_ sender: Any) {
-        prefectures?.getPrefecturesName(name: "埼玉県")
+        delegate?.didSelectPrefecture(name: "埼玉県")
     }
     
     @IBAction func chibaButton(_ sender: Any) {
-        prefectures?.getPrefecturesName(name: "千葉県")
+        delegate?.didSelectPrefecture(name: "千葉県")
     }
 }
