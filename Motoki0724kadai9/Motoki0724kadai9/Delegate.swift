@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol secondVCDelegate: AnyObject {
-    func getPrefecturesName(name: String)
+protocol SecondViewControllerDelegate: AnyObject {
+    func didSelectPrefecture(name: String)
 }
 
